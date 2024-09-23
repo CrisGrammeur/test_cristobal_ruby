@@ -1,0 +1,21 @@
+current directory: /home/pacioli/Documents/user_api/vendor/bundle/ruby/3.0.0/gems/puma-6.4.3/ext/puma_http11
+/usr/bin/ruby3.0 -I /usr/lib/ruby/vendor_ruby -r ./siteconf20240921-27882-7ka0d4.rb extconf.rb
+checking for BIO_read() in -llibcrypto... no
+checking for BIO_read() in -lcrypto... no
+checking for BIO_read() in -llibeay32... no
+** Puma will be compiled without SSL support
+creating Makefile
+
+current directory: /home/pacioli/Documents/user_api/vendor/bundle/ruby/3.0.0/gems/puma-6.4.3/ext/puma_http11
+make DESTDIR\= clean
+
+current directory: /home/pacioli/Documents/user_api/vendor/bundle/ruby/3.0.0/gems/puma-6.4.3/ext/puma_http11
+make DESTDIR\=
+compiling http11_parser.c
+compiling mini_ssl.c
+compiling puma_http11.c
+linking shared-object puma/puma_http11.so
+
+current directory: /home/pacioli/Documents/user_api/vendor/bundle/ruby/3.0.0/gems/puma-6.4.3/ext/puma_http11
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 puma_http11.so ./.gem.20240921-27882-stn8hl/puma
