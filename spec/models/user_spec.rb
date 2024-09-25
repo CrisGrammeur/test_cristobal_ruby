@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:user) { User.create(name: "Pacioli", email: "pacioli@gmail.com", password: "password") }
+  let(:user) { User.create(name: "Pacioli", email: "pacioli@gmail.com", password: "azerty") }
 
   describe "validations" do
     it "is valid with valid attributes" do
@@ -9,12 +9,12 @@ RSpec.describe User, type: :model do
     end
 
     it "is not valid without a name" do
-      user.name: nil
+      user.name = nil
       expect(user).not_to be_valid
     end
 
     it "is not valid without an email" do
-      user.email: nil
+      user.email = nil
       expect(user).not_to be_valid
     end
 
@@ -24,13 +24,13 @@ RSpec.describe User, type: :model do
     end
 
     it "is not valid without a password" do
-        user.password: nil
+        user.password = nil
         expect(user).not_to be_valid
     end
 
     it "is not valid with a duplicate email" do
-      User.create(name: "Pacioli", email: "pacioli@gmail.com", password: "password")
-      duplicate_user = User.new(name: "Another", email: "pacioli@gmail.com", password: "password")
+      User.create(name: "Pacioli", email: "pacioli@gmail.com", password: "azerty")
+      duplicate_user = User.new(name: "Another", email: "pacioli@gmail.com", password: "azerty")
       expect(duplicate_user).not_to be_valid
     end
 
@@ -43,7 +43,7 @@ RSpec.describe User, type: :model do
   # Authentication
   describe "authentication" do
     it "authenticates with valid password" do
-      expect(user.authenticate('password')).to eq(user)
+      expect(user.authenticate('azerty')).to eq(user)
     end
 
     it "does not authenticate with an invalid password" do

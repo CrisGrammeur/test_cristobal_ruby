@@ -3,6 +3,12 @@ class SessionsController < ApplicationController
     
     def create
       @user = User.find_by(email: params[:email])
+
+      if @user
+        puts "User found: #{@user.inspect}"
+      else
+        puts "User not found"
+      end
   
       if @user && @user.authenticate(params[:password])
         # session[:user_id] = @user.id
